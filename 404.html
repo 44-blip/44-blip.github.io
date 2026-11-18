@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="test-page" content="404">
+<title>test</title>
+<script id="built-routes" type="application/json">["/","/Lawn-care-orange-county","/landscape-design-and-construction","/landscaping-irvine-ca","/mission-viejo","/outdoor-lighting-orange-county","/sod-installation-orange-county","/thank-you","/yard-clean-up-orange-county"]</script>
+<script>
+    (() => {
+      const routes = JSON.parse(document.getElementById('built-routes').textContent);
+      const requested = location.pathname;
+      const normalized = requested.replace(/\/+$/, '').replace(/\.html$/i, '').toLowerCase() || '/';
+      const alias = normalized === '/home' || normalized === '/index' ? '/' : normalized;
+      const match = routes.find(route => route.toLowerCase() === alias);
+      if (match && requested !== match) location.replace(match + location.search);
+    })();
+  </script>
+</head>
+<body></body>
+</html>
